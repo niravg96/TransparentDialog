@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@color/bg_dark_grey">
+
+        <TextView
+            android:id="@+id/filtertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:text="Refund Status"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layoutMainNo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:text="You don't have any past refund"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+        <RelativeLayout
+            android:id="@+id/layoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/refund_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <!--   <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Refunds in Process"
+                   android:textColor="@color/white"
+                   android:textSize="18dp"
+                   android:fontFamily="@font/montserrat_regular"
+                   android:id="@+id/refund"/>
+
+               <RelativeLayout
+                   android:id="@+id/layoutPartner"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/refund"
+                   android:layout_marginTop="10dp">
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/cardPPoint"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       app:cardBackgroundColor="@color/grayS"
+                       app:cardCornerRadius="15dp"
+                       app:cardElevation="10dp">
+
+                   <LinearLayout
+                       android:id="@+id/linPartnerName"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="20dp"
+                       android:orientation="vertical">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/txtPartnerName"
+                       android:text="Swig bar and eatery"
+                       android:fontFamily="@font/montserrat_regular"
+                       android:textSize="16dp"
+                       android:textColor="@color/white"/>
+
+                       <LinearLayout
+                           android:id="@+id/linTransactionID"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginTop="10dp">
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Transaction ID:"
+                           android:fontFamily="@font/montserrat_regular"
+                           android:textSize="16dp"
+                           android:textColor="@color/grayP" />
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/txtTransactionID"
+                               android:text="729846282"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="16dp"
+                               android:layout_marginLeft="5dp"
+                               android:textColor="@color/grayP"/>
+                       </LinearLayout>
+                       <LinearLayout
+                           android:id="@+id/linPrice"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginTop="10dp">
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="?2760.0"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="18dp"
+                               android:id="@+id/price"
+                               android:textColor="@color/white" />
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/txtInProcess"
+                               android:text="In process"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="16dp"
+                               android:gravity="right"
+                               android:textColor="@color/grayP"/>
+                       </LinearLayout>
+
+                       <View
+                           android:id="@+id/view1"
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_marginBottom="10dp"
+                           android:background="@color/grayS" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:id="@+id/txtSeeDetails"
+                           android:text="See Details"
+                           android:fontFamily="@font/montserrat_regular"
+                           android:textSize="16dp"
+                           android:gravity="center"
+                           android:textColor="@color/grayP"/>
+
+                   </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+               </RelativeLayout>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Completed Refunds"
+                   android:textColor="@color/white"
+                   android:textSize="18dp"
+                   android:fontFamily="@font/montserrat_regular"
+                   android:id="@+id/completeRefund"
+                   android:layout_below="@+id/layoutPartner"
+                   android:layout_marginTop="20dp"/>
+
+               <RelativeLayout
+                   android:id="@+id/layoutCompleteRefund"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/completeRefund"
+                   android:layout_marginTop="10dp">
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/CardCompleteRefunds"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       app:cardBackgroundColor="@color/grayS"
+                       app:cardCornerRadius="15dp"
+                       app:cardElevation="10dp">
+
+                       <LinearLayout
+                           android:id="@+id/linPartnerNameRefund"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="20dp"
+                           android:orientation="vertical">
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal">
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:id="@+id/txtPartnerNameRefund"
+                           android:text="Elephant &amp; co."
+                           android:fontFamily="@font/montserrat_regular"
+                           android:textSize="16dp"
+                           android:textColor="@color/white"/>
+
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/txtDateRefund"
+                                   android:text="21 Aug 2023"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="16dp"
+                                   android:gravity="right"
+                                   android:textColor="@color/grayP"/>
+                           </LinearLayout>
+
+                       <LinearLayout
+                           android:id="@+id/linTransactionIDRefund"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginTop="10dp">
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Transaction ID:"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="16dp"
+                               android:textColor="@color/grayP" />
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/txtTransactionIDRefund"
+                               android:text="729846234"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="16dp"
+                               android:layout_marginLeft="5dp"
+                               android:textColor="@color/grayP"/>
+                       </LinearLayout>
+                           <RelativeLayout
+                               android:id="@+id/linPriceRefund"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="10dp">
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="?2760.0"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="18dp"
+                                   android:id="@+id/priceRefund"
+                                   android:textColor="@color/white" />
+                               <ImageView
+                                   android:layout_alignParentRight="true"
+                                   android:layout_width="30dp"
+                                   android:layout_height="30dp"
+                                   android:id="@+id/imgDone"
+                                   android:textSize="16dp"
+                                   android:layout_weight="1"
+                                   android:layout_gravity="right"
+                                   android:src="@drawable/ic_yes"/>
+                           </RelativeLayout>
+
+                           <View
+                               android:id="@+id/view3"
+                               android:layout_width="match_parent"
+                               android:layout_height="1dp"
+                               android:layout_marginTop="10dp"
+                               android:layout_marginBottom="10dp"
+                               android:background="@color/grayS" />
+
+                           <View
+                               android:id="@+id/view4"
+                               android:layout_width="match_parent"
+                               android:layout_height="1dp"
+                               android:layout_marginTop="10dp"
+                               android:layout_marginBottom="20dp"
+                               android:background="@color/grayS" />
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal">
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/txtRefundNotReceived"
+                                   android:text="Didn't receive your refund?"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="16dp"
+                                   android:textColor="@color/grayP"/>
+
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/txtReportIssue"
+                                   android:text="Report Issue"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="16dp"
+                                   android:gravity="right"
+                                   android:textColor="@color/grayP"/>
+
+                           </LinearLayout>
+
+                           <View
+                               android:id="@+id/view5"
+                               android:layout_width="95dp"
+                               android:layout_height="1dp"
+                               android:layout_gravity="right"
+                               android:layout_marginTop="-5dp"
+                               android:background="@color/grayS" />
+
+                       </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+               </RelativeLayout>
+
+               <RelativeLayout
+                   android:id="@+id/layoutPartner1"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/layoutCompleteRefund"
+                   android:layout_marginTop="10dp">
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/cardPPoint1"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       app:cardBackgroundColor="@color/grayS"
+                       app:cardCornerRadius="15dp"
+                       app:cardElevation="10dp">
+
+                       <LinearLayout
+                           android:id="@+id/linPartnerName1"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="20dp"
+                           android:orientation="vertical">
+
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/txtPartnerName1"
+                               android:text="Swig bar and eatery"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="16dp"
+                               android:textColor="@color/white"/>
+
+                           <LinearLayout
+                               android:id="@+id/linTransactionID1"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal"
+                               android:layout_marginTop="10dp">
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Transaction ID:"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="16dp"
+                                   android:textColor="@color/grayP" />
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/txtTransactionID1"
+                                   android:text="729846282"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="16dp"
+                                   android:layout_marginLeft="5dp"
+                                   android:textColor="@color/grayP"/>
+                           </LinearLayout>
+                           <LinearLayout
+                               android:id="@+id/linPrice1"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal"
+                               android:layout_marginTop="10dp">
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="?2760.0"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="18dp"
+                                   android:id="@+id/price1"
+                                   android:textColor="@color/white" />
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/txtInProcess1"
+                                   android:text="In process"
+                                   android:fontFamily="@font/montserrat_regular"
+                                   android:textSize="16dp"
+                                   android:gravity="right"
+                                   android:textColor="@color/grayP"/>
+                           </LinearLayout>
+
+                           <View
+                               android:id="@+id/view2"
+                               android:layout_width="match_parent"
+                               android:layout_height="1dp"
+                               android:layout_marginTop="10dp"
+                               android:layout_marginBottom="10dp"
+                               android:background="@color/grayS" />
+
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/txtSeeDetails1"
+                               android:text="See Details"
+                               android:fontFamily="@font/montserrat_regular"
+                               android:textSize="16dp"
+                               android:gravity="center"
+                               android:textColor="@color/grayP"/>
+
+                       </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+               </RelativeLayout>-->
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ShapeLinearLayout">
+        <attr name="BgColorLl" format="color" />
+        <attr name="CornerRadiusLl" format="dimension" />
+        <attr name="StrokeWidthLl" format="dimension" />
+        <attr name="StrokeColorLl" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ShapeRelativeLayout">
+        <attr name="BgColorRl" format="color" />
+        <attr name="CornerRadiusRl" format="dimension" />
+        <attr name="StrokeWidthRl" format="dimension" />
+        <attr name="StrokeColorRl" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ShapeTextView">
+        <attr name="BgColorTv" format="color" />
+        <attr name="CornerRadiusTv" format="dimension" />
+        <attr name="StrokeWidthTv" format="dimension" />
+        <attr name="StrokeColorTv" format="color" />
+    </declare-styleable>
+</resources>
